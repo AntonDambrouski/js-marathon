@@ -90,3 +90,17 @@ function getRandomNumber(min, max) {
 function getRandomColor() {
   return colors[Math.floor(Math.random() * colors.length)];
 }
+
+function winTheGame() {
+  function kill() {
+    const circle = document.querySelector(".circle");
+    if (!circle) {
+      clearInterval(gameInterval);
+      console.log("stopped");
+    } else {
+      circle.click();
+    }
+  }
+
+  let gameInterval = setInterval(kill, 75);
+}
